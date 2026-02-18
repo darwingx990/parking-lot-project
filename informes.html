@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes - Administrador | Parqueadero</title>
+    <link rel="stylesheet" href="styles/informes.css">
+</head>
+<body>
+  <div class="layout">
+      <aside class="sidebar">
+              <h2 class="sidebar-title">Administrador</h2>
+              <nav class="menu">
+                  <button class="menu-item active">Usuarios</button>
+                  <button class="menu-item">Vehículos</button>
+                  <button class="menu-item">Entradas</button>
+                  <button class="menu-item">Salidas</button>
+                  <button class="menu-item">Incidencias</button>
+                  <button class="menu-item">Pico y Placa</button>
+                  <button class="menu-item">Celdas ocupadas</button>
+                  <button class="menu-item">Celdas más usadas</button>
+                  <button class="menu-item">Vehículos frecuentes</button>
+                  <button class="menu-item">Horas pico</button>
+              </nav>
+          </aside>
+      
+      <header class="content-header">
+          <h1>Listado de Usuarios</h1>
+          <p>Reporte exclusivo para administrador</p>
+      </header>
+
+      <main class="content">
+          <section class="filters">
+              <div class="filter-group">
+                  <label for="fecha">Fecha</label>
+                  <input type="date" id="fecha">
+              </div>
+
+              <div class="filter-group">
+                  <label for="buscar">Buscar</label>
+                  <input type="text" id="buscar" placeholder="Nombre, placa, cédula...">
+              </div>
+
+              <button class="btn-primary">Generar reporte</button>
+          </section>
+
+        <section class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Cédula</th>
+                <th>Email</th>
+                <th>Rol</th>
+              </tr>
+              </thead>
+            <tbody>
+              <tr>
+                <td>001</td>
+                <td>Maradona Gutierrez</td>
+                <td>123456789</td>
+                <td>eldiego69@gmail.com</td>
+                <td>Cliente</td>
+              </tr>
+              <tr>
+                <td>002</td>
+                <td>Amparo no Grisales</td>
+                <td>987654321</td>
+                <td>amparito@gmail.com</td>
+                <td>Cliente</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+
+      <footer>
+
+      </footer>
+  </div>
+</body>
+</html>
