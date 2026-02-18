@@ -1,0 +1,92 @@
+:root {
+    --morado: #6D28D9;
+    --lavanda: #EDE9FE;
+    --fondo: #F8FAFC;
+    --celda-disponible: #E5E7EB;
+    --celda-ocupada: #111827;
+    --texto: #1F2937;
+    --texto-claro: #F9FAFB;
+    --borde: #D1D5DB;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: var(--fondo);
+    color: var(--texto);
+}
+
+.main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+h1 {
+    color: var(--morado);
+    margin-bottom: 4px;
+}
+
+.subtitle {
+    margin-bottom: 24px;
+    color: #4B5563;
+    font-size: 0.9rem;
+}
+
+.parking-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.area {
+    background-color: white;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.area h2 {
+    color: var(--morado);
+    font-size: 1rem;
+    margin-bottom: 12px;
+}
+
+.cells {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.cell {
+    height: 60px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--borde);
+}
+
+.disponible {
+    background-color: var(--celda-disponible);
+}
+
+.ocupada {
+    background-color: var(--celda-ocupada);
+    color: var(--texto-claro);
+}
+
+.carro {
+    border-left: 4px solid var(--morado);
+}
+
+.moto {
+    border-left: 4px solid #2563EB;
+}
