@@ -1,0 +1,106 @@
+ *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url("assets/images/fondo.jpg") no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.login-container, .usuario-container {
+  background: rgba(255, 255, 255, 0.8); /* Transparencia para ver el fondo */
+  padding: 280px 150px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+  text-align: center;
+  width: 800px;
+}
+
+.login-logo {
+  display: block;
+  margin: 0 auto 70px;
+  max-width: 350px;
+  height: auto;
+}
+
+.login-container h2 {
+  margin-bottom: 30px;
+  color: #000000;
+  font-size: 28px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 12px;
+}
+
+.input-group .icon {
+  margin-right: 15px;
+  font-size: 22px;
+}
+
+.input-group input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 16px;
+  background: transparent;
+  padding: 8px 0;
+}
+
+.forgot {
+  display: block;
+  margin: 12px 0;
+  font-size: 14px;
+  color: #6D28D9;
+  text-decoration: none;
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
+
+.Crear-cuenta {
+  display: block;
+  margin: 12px 0;
+  font-size: 14px;
+  color: #6D28D9;
+  text-decoration: none;
+}
+
+.Crear-cuenta:hover {
+  text-decoration: underline;
+}
+
+
+.btn-login {
+  background: #6D28D9;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.btn-login:hover {
+  background: #907cea;
+}
+
+
+
+ 
