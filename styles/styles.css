@@ -136,45 +136,45 @@
   background: #907cea;
 }
 
-#espacios-page {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: var(--fondo);
-  color: var(--texto);
-}
+/* =============================================
+   HEADER COMPARTIDO (Global - todas las páginas)
+   ============================================= */
 
-#espacios-page header {
+header {
   background-color: var(--texto-claro);
   border-bottom: 1px solid var(--borde);
   padding: 0 40px;
 }
 
-#espacios-page .header-container {
+.header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 80px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-#espacios-page .logo1 img {
+.logo1 img {
   height: 50px;
   width: auto;
 }
 
-#espacios-page nav ul {
+header nav ul {
   list-style: none;
 }
 
-#espacios-page .menu {
+.menu {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-#espacios-page .menu > li {
+.menu>li {
   position: relative;
 }
 
-#espacios-page .menu > li > a {
+.menu>li>a {
   text-decoration: none;
   color: var(--texto);
   font-weight: 600;
@@ -184,12 +184,12 @@
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-#espacios-page .menu > li > a:hover {
+.menu>li>a:hover {
   background-color: var(--lavanda);
   color: var(--morado);
 }
 
-#espacios-page .submenu {
+.submenu {
   position: absolute;
   top: 100%;
   right: 0;
@@ -203,9 +203,10 @@
   transform: translateY(-5px);
   transition: all 0.3s ease;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
-#espacios-page .submenu li a {
+.submenu li a {
   text-decoration: none;
   color: var(--texto-claro);
   padding: 12px 16px;
@@ -213,14 +214,24 @@
   transition: background 0.3s ease;
 }
 
-#espacios-page .submenu li a:hover {
+.submenu li a:hover {
   background-color: var(--morado);
 }
 
-#espacios-page .dropdown:hover .submenu {
+.dropdown:hover .submenu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+}
+
+/* =============================================
+   ESPACIOS PAGE (contenido específico)
+   ============================================= */
+
+#espacios-page {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--fondo);
+  color: var(--texto);
 }
 
 #espacios-page .main {
@@ -537,8 +548,15 @@
 }
 
 @keyframes fadeInInformes {
-  from { opacity: 0; transform: translateY(4px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 #informes-page .table-container {
@@ -601,29 +619,29 @@
   background: var(--fondo);
   color: var(--texto-oscuro);
   min-height: 100vh;
-  padding: 48px 24px;
 }
 
 #accesos-page .container {
   max-width: 920px;
   margin: 0 auto;
+  padding: 48px 24px;
 }
 
-#accesos-page header {
+#accesos-page .container header {
   margin-bottom: 36px;
   background: none;
   border-bottom: none;
   padding: 0;
 }
 
-#accesos-page header h1 {
+#accesos-page .container header h1 {
   font-size: 1.75rem;
   font-weight: 600;
   color: var(--texto-oscuro);
   letter-spacing: -0.02em;
 }
 
-#accesos-page header p {
+#accesos-page .container header p {
   margin-top: 6px;
   color: var(--texto-muted);
   font-size: 0.9rem;
@@ -696,8 +714,15 @@
 }
 
 @keyframes fadeInAccesos {
-  from { opacity: 0; transform: translateY(6px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 #accesos-page .card {
@@ -940,17 +965,46 @@
   white-space: nowrap;
 }
 
-#accesos-page .badge-entrada { background: var(--exito-bg); color: var(--exito); }
-#accesos-page .badge-salida  { background: #dbeafe; color: #1d4ed8; }
-#accesos-page .badge-activo  { background: var(--alerta-bg); color: var(--alerta); }
-#accesos-page .badge-restringido { background: var(--error-bg); color: var(--error); }
+#accesos-page .badge-entrada {
+  background: var(--exito-bg);
+  color: var(--exito);
+}
+
+#accesos-page .badge-salida {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+#accesos-page .badge-activo {
+  background: var(--alerta-bg);
+  color: var(--alerta);
+}
+
+#accesos-page .badge-restringido {
+  background: var(--error-bg);
+  color: var(--error);
+}
 
 @media (max-width: 640px) {
-  #accesos-page { padding: 24px 16px; }
-  #accesos-page .form-grid { grid-template-columns: 1fr; }
-  #accesos-page .tabs-nav { flex-direction: column; }
-  #accesos-page .card { padding: 20px; }
-  #accesos-page .form-actions { flex-direction: column; }
+  #accesos-page .container {
+    padding: 24px 16px;
+  }
+
+  #accesos-page .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #accesos-page .tabs-nav {
+    flex-direction: column;
+  }
+
+  #accesos-page .card {
+    padding: 20px;
+  }
+
+  #accesos-page .form-actions {
+    flex-direction: column;
+  }
 }
 
 #usuarios-page {
@@ -958,29 +1012,29 @@
   background: var(--fondo);
   color: var(--texto-oscuro);
   min-height: 100vh;
-  padding: 48px 24px;
 }
 
 #usuarios-page .container {
   max-width: 640px;
   margin: 0 auto;
+  padding: 48px 24px;
 }
 
-#usuarios-page header {
+#usuarios-page .container header {
   margin-bottom: 40px;
   background: none;
   border-bottom: none;
   padding: 0;
 }
 
-#usuarios-page header h1 {
+#usuarios-page .container header h1 {
   font-size: 1.75rem;
   font-weight: 600;
   color: var(--texto-oscuro);
   letter-spacing: -0.02em;
 }
 
-#usuarios-page header p {
+#usuarios-page .container header p {
   margin-top: 6px;
   color: var(--texto-muted);
   font-size: 0.9rem;
@@ -1046,8 +1100,15 @@
 }
 
 @keyframes fadeInUsuarios {
-  from { opacity: 0; transform: translateY(6px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 #usuarios-page .card {
@@ -1172,8 +1233,15 @@
   font-weight: 500;
 }
 
-#usuarios-page .status-hint.active  { background: #d1fae5; color: #065f46; }
-#usuarios-page .status-hint.inactive { background: #fee2e2; color: #991b1b; }
+#usuarios-page .status-hint.active {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+#usuarios-page .status-hint.inactive {
+  background: #fee2e2;
+  color: #991b1b;
+}
 
 #usuarios-page .divider {
   height: 1px;
